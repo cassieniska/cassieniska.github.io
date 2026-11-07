@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cassie Eniska — Customer Support, Personal Assistant & CRM</title>
+<meta name="description" content="Portfolio of Cassie Eniska: remote customer support, personal assistant and CRM specialist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fffcef; --surface:#ffffff; --ink:#2b2340; --muted:#6a6280;
+    --accent:#7b5cc4; --accent-soft:#eee7fc; --line:#ebe4d2;
+    --yellow:#fff3c4; --lilac:#e9e0fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;font-size:16px}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,252,239,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none}
+  .logo span{color:var(--accent)}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav ul a{text-decoration:none;font-size:14px;color:var(--muted);font-weight:500}
+  nav ul a:hover{color:var(--accent)}
+
+  /* Hero */
+  .hero{padding:96px 0 80px;background:radial-gradient(circle at 85% 20%,var(--lilac) 0,transparent 45%),radial-gradient(circle at 10% 90%,var(--yellow) 0,transparent 50%)}
+  .stat:nth-child(even){background:var(--yellow);border-color:#f3e6a8}
+  .stat:nth-child(odd){background:var(--lilac);border-color:#ddd0f7}
+  .tools{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+  .tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:transform .2s}
+  .tool:hover{transform:translateY(-3px)}
+  .tool:nth-child(odd){background:var(--lilac);border-color:#ddd0f7}
+  .tool:nth-child(even){background:var(--yellow);border-color:#f3e6a8}
+  .tool b{display:block;font-size:17px;margin-bottom:4px}
+  .tool span{font-size:13px;color:var(--muted)}
+  h4{font-size:15px;color:var(--muted);font-weight:600;margin-bottom:14px}
+  @media (max-width:820px){.tools{grid-template-columns:1fr 1fr}}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:24px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(40px,7vw,72px);line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
+  h1 em{font-style:italic;color:var(--accent);font-weight:400}
+  .lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:620px;margin-bottom:36px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 24px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+  .btn-ghost{border:1px solid var(--line);background:var(--surface)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Sections */
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-family:Fraunces,serif;font-weight:600;font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;margin-bottom:32px;line-height:1.15}
+
+  /* About */
+  .about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:16px;font-size:17px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:34px;color:var(--accent);line-height:1}
+  .stat span{font-size:14px;color:var(--muted)}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,29,26,.08)}
+  .icon{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:18px}
+  .icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:19px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px;margin-bottom:14px}
+  .card ul{list-style:none}
+  .card li{font-size:14px;padding:6px 0;border-top:1px dashed var(--line)}
+  .card li::before{content:"→ ";color:var(--accent)}
+
+  /* Experience */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .job{position:relative;margin-bottom:36px}
+  .job::before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .job .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em}
+  .job h3{font-size:18px;margin:2px 0}
+  .job .where{color:var(--muted);font-size:15px;margin-bottom:8px}
+  .job p{font-size:15px;color:var(--muted);max-width:680px}
+  .job ul{list-style:none;max-width:700px}
+  .job li{font-size:15px;color:var(--muted);padding:3px 0 3px 18px;position:relative}
+  .job li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:2px;background:var(--accent);opacity:.6}
+
+  /* Skills */
+  .tags{display:flex;flex-wrap:wrap;gap:10px}
+  .tag{background:var(--surface);border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500}
+
+  /* Contact */
+  .contact{background:linear-gradient(135deg,var(--lilac),var(--yellow));color:var(--ink);border-radius:24px;padding:56px 40px;text-align:center;border:1px solid #ddd0f7}
+  .contact h2{color:var(--ink);margin-bottom:14px}
+  .contact p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+  .contact .btn-primary{background:var(--accent)}
+  .contact .btn-ghost{background:rgba(255,255,255,.6);border-color:#cbbdf0;color:var(--ink)}
+
+  footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+
+  /* Fade-in */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  @media (max-width:820px){
+    .about{grid-template-columns:1fr;gap:32px}
+    .cards{grid-template-columns:1fr}
+    nav ul{display:none}
+    .hero{padding:64px 0 56px}
+    section{padding:56px 0}
+    .contact{padding:44px 24px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Cassie<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Available for remote work</span>
+    <h1>Hi, I'm Cassie Eniska.<br>I keep customers <em>happy</em> and work <em>organised</em>.</h1>
+    <p class="lead">CRM executive, customer support specialist and virtual assistant with 6+ years across finance, admin and marketing, helping businesses look after their customers, manage the details, and keep people coming back.</p>
+    <div class="btns">
+      <a href="#contact" class="btn btn-primary">Work with me</a>
+      <a href="#experience" class="btn btn-ghost">See my experience</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <div class="label">About me</div>
+      <h2>Friendly with people, precise with details.</h2>
+      <p>Since 2020 I've worked across finance, administration, customer service, social media marketing and CRM, for teams in Indonesia and Australia, both on-site and fully remote. Today I'm a CRM Executive, running promotional and retention campaigns, measuring their ROI, and turning customer data into clear insights.</p>
+      <p>With a Bachelor's degree in Accounting, I bring an organised, numbers-aware approach to everything, whether that's resolving a tricky customer issue, keeping a busy schedule on track, or building a campaign report.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b>6+</b><span>Years of experience</span></div>
+      <div class="stat"><b>7</b><span>Roles across 6 companies</span></div>
+      <div class="stat"><b>BA</b><span>Degree in Accounting</span></div>
+      <div class="stat"><b>100%</b><span>Remote-ready</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="label">What I do</div>
+    <h2>How I can help</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Customer Support</h3>
+        <p>Clear, patient and fast support that turns problems into good experiences.</p>
+        <ul><li>Email, chat &amp; WhatsApp support</li><li>Payments, accounts &amp; complaints</li><li>Customers across time zones</li></ul>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Virtual Assistant &amp; Admin</h3>
+        <p>Reliable support that frees up your time so you can focus on what matters.</p>
+        <ul><li>Scheduling &amp; correspondence</li><li>Bookkeeping, budgets &amp; payroll</li><li>Reports &amp; record keeping</li></ul>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>CRM &amp; Retention</h3>
+        <p>Campaigns that bring customers back, backed by clear data.</p>
+        <ul><li>Promotional &amp; loyalty campaigns</li><li>ROI, behaviour &amp; CLV analysis</li><li>Dashboards &amp; CRM training</li></ul>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Social Media Marketing</h3>
+        <p>Consistent, on-brand content and ads that grow engagement.</p>
+        <ul><li>Google, Instagram &amp; Facebook ads</li><li>Content calendars &amp; SEO blogs</li><li>Engagement &amp; competitor analysis</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="label">Experience</div>
+    <h2>Where I've worked</h2>
+    <div class="timeline">
+      <div class="job reveal">
+        <div class="when">JUN 2025 — PRESENT</div>
+        <h3>CRM Executive</h3>
+        <div class="where">Multiverse NV · Full-time · Remote</div>
+        <ul>
+          <li>Create and manage promotional, loyalty and retention campaigns in the CRM</li>
+          <li>Measure campaign ROI and customer response, and recommend strategy adjustments</li>
+          <li>Analyse customer behaviour, trends and customer lifetime value (CLV)</li>
+          <li>Build dashboards and reports for sales, marketing and support teams</li>
+          <li>Train staff on CRM best practices and keep customer records accurate</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">MAR 2025 — MAY 2025</div>
+        <h3>Customer Support Specialist</h3>
+        <div class="where">Multiverse NV · Contract · Remote</div>
+        <ul>
+          <li>Assisted customers with accounts, deposits, withdrawals and technical issues</li>
+          <li>Checked eligibility for bonuses and cashbacks, and explained product features</li>
+          <li>Managed customer feedback and supported community building</li>
+          <li>Protected customer data security and privacy at every step</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">DEC 2023 — MAR 2025</div>
+        <h3>Social Media Marketing Specialist</h3>
+        <div class="where">Lingua Learn · Full-time · Remote</div>
+        <ul>
+          <li>Ran Google Ads, Instagram and Facebook ad campaigns, plus email marketing</li>
+          <li>Built content calendars and created visual content and SEO blog posts</li>
+          <li>Tracked engagement metrics and competitors to refine strategy</li>
+          <li>Trained franchises on social media and website management, keeping the brand voice consistent</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">DEC 2023 — AUG 2024</div>
+        <h3>Virtual Assistant</h3>
+        <div class="where">Spiritual Healers Bali · Part-time · Remote (Australia)</div>
+        <ul>
+          <li>Provided remote administration and project management support for an Australia-based team</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">JUN 2022 — JUL 2023</div>
+        <h3>Customer Service Officer</h3>
+        <div class="where">Daily Ease · Full-time · Bali, Indonesia</div>
+        <ul>
+          <li>Answered and routed customer emails to the right internal teams</li>
+          <li>Supported high-priority customers across different time zones</li>
+          <li>Verified customers, set up accounts, took payments and provided pricing</li>
+          <li>Researched and resolved customer problems and complaints</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">MAR 2021 — MAR 2022</div>
+        <h3>Finance Administrative Officer</h3>
+        <div class="where">Primajaya · Full-time · Manado, Indonesia</div>
+        <ul>
+          <li>Handled cash transactions and prepared monthly cash flow</li>
+          <li>Prepared scheduled reports and reconciled expense reports</li>
+          <li>Managed calls, WhatsApp, email and e-commerce chats, and greeted visitors</li>
+          <li>Tracked weekly stock and archived receipts and delivery orders</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">AUG 2020 — JAN 2021</div>
+        <h3>Finance Staff</h3>
+        <div class="where">PT. Sinar Galesong Prima · Contract · Manado, Indonesia</div>
+        <ul>
+          <li>Kept daily transaction spreadsheets and records of invoices and salary payments</li>
+          <li>Processed reimbursements, prepared budgets and supported payroll</li>
+          <li>Reported on liquidity and cash flow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Skills</div>
+    <h2>Tools &amp; strengths</h2>
+    <h4>Platforms I use every day</h4>
+    <div class="tools reveal">
+      <div class="tool"><b>Crisp</b><span>Customer messaging</span></div>
+      <div class="tool"><b>Jira</b><span>Task &amp; project tracking</span></div>
+      <div class="tool"><b>Fast Track</b><span>CRM automation</span></div>
+      <div class="tool"><b>BetConstruct</b><span>Gaming platform back office</span></div>
+    </div>
+    <h4>Skills</h4>
+    <div class="tags reveal">
+      <span class="tag">Customer service</span><span class="tag">CRM management</span><span class="tag">Campaign ROI analysis</span>
+      <span class="tag">Customer lifetime value (CLV)</span><span class="tag">Dashboards &amp; reporting</span><span class="tag">Microsoft Excel</span>
+      <span class="tag">Email marketing</span><span class="tag">Google Ads</span><span class="tag">Meta (Instagram &amp; Facebook) Ads</span>
+      <span class="tag">Content &amp; SEO</span><span class="tag">Administration</span><span class="tag">Project management</span>
+      <span class="tag">Bookkeeping &amp; cash flow</span><span class="tag">Budgets &amp; payroll</span><span class="tag">Data privacy</span>
+      <span class="tag">Staff training</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-top:none">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>Let's work together</h2>
+      <p>Looking for support, an assistant, or someone to run your CRM? I'd love to hear from you.</p>
+      <div class="btns" style="justify-content:center">
+        <!-- Replace with your real email -->
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Email me</a>
+        <a href="https://www.linkedin.com/in/cassie-eniska-8b50b016a/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Cassie Eniska</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } }), {threshold: .12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
